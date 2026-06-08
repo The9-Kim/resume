@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Slack 봇 기능·워크플로우 실험 구조 설계 | 김덕우</title>
+  <style>
+    :root { --text:#111827; --muted:#4b5563; --line:#e5e7eb; --bg:#ffffff; --soft:#f8fafc; --accent:#004e30; --chip:#eef6d1; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif; line-height:1.72; letter-spacing:-0.012em; word-break:keep-all; }
+    main { max-width:1040px; margin:0 auto; padding:44px 24px 80px; }
+    a { color:inherit; text-decoration:none; }
+    .back { display:inline-flex; margin-bottom:28px; border-bottom:1px solid currentColor; color:var(--accent); font-weight:900; }
+    .hero { border-bottom:1px solid var(--line); padding-bottom:30px; }
+    .eyebrow { color:var(--accent); font-size:14px; font-weight:900; }
+    h1 { margin:8px 0 12px; color:var(--accent); font-size:clamp(32px,6vw,56px); line-height:1.08; letter-spacing:-0.06em; }
+    p { margin:0; color:var(--muted); }
+    section { border-bottom:1px solid var(--line); padding:30px 0; }
+    h2 { margin:0 0 16px; color:var(--accent); font-size:24px; letter-spacing:-0.04em; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .card { border:1px solid var(--line); border-radius:18px; background:var(--soft); padding:18px; }
+    .card strong { display:block; margin-bottom:6px; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .chip { border-radius:999px; background:var(--chip); padding:4px 10px; color:var(--accent); font-size:13px; font-weight:900; }
+    figure { margin:0; border:1px solid var(--line); border-radius:22px; overflow:hidden; background:#fff; }
+    img { display:block; width:100%; height:auto; }
+    figcaption { border-top:1px solid var(--line); padding:14px 18px; color:var(--muted); font-size:14px; }
+    code { border-radius:6px; background:#f1f5f9; padding:1px 5px; }
+    @media (max-width:760px) { .grid { grid-template-columns:1fr; } main { padding:28px 16px 56px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../../index.html">← 이력서로 돌아가기</a>
+    <header class="hero">
+      <div class="eyebrow">Career Case Study</div>
+      <h1>Slack 봇 기능·워크플로우 실험 구조 설계</h1>
+      <p>비개발 직군도 Slack 안에서 필요한 자동화 기능을 제안하고, AI가 커맨드 정의·핸들러·프롬프트 초안까지 이어갈 수 있도록 Socket Mode 기반 Slack 봇과 워크플로우 엔진을 연결했습니다.</p>
+      <div class="chips"><span class="chip">Slack Socket Mode</span><span class="chip">commands.json</span><span class="chip">Claude Agent SDK</span><span class="chip">Workflow Router</span></div>
+    </header>
+    <section>
+      <h2>문제 정의</h2>
+      <div class="grid">
+        <div class="card"><strong>반복 구현 부담</strong><p>이벤트 처리, 핸들러, 권한, 프롬프트 파일을 매번 새로 연결해야 했습니다.</p></div>
+        <div class="card"><strong>비개발자 접근성</strong><p>좋은 업무 자동화 아이디어가 있어도 실제 Slack 봇 기능 초안까지 연결되기 어려웠습니다.</p></div>
+        <div class="card"><strong>검증 흐름 부재</strong><p>명령 생성 후 실행 조건과 컨텍스트 수집 방식이 일관되지 않아 운영 리스크가 있었습니다.</p></div>
+      </div>
+    </section>
+    <section>
+      <h2>구현 구조</h2>
+      <p><code>prompts/slack-bot/commands.json</code>을 Slack 봇 명령어의 중앙 레지스트리로 두고, <code>commandKey</code>, <code>aliases</code>, <code>triggerTypes</code>, <code>model</code>, <code>maxTurns</code>, <code>promptFile</code>, <code>outputMode</code> 같은 설정을 명령별로 관리했습니다. 백엔드는 <code>command-registry.ts</code>에서 이 설정을 읽어 멘션·슬래시 커맨드·메시지 단축키 이벤트를 적절한 핸들러와 프롬프트로 라우팅합니다.</p>
+      <p><code>신규기능</code> 명령은 별도 핸들러에서 <code>slack-bot-dev</code> 채팅 세션을 생성합니다. 팀원이 Slack에서 필요한 기능을 자연어로 설명하면 AI 채팅 인터페이스가 커맨드 정의, TypeScript 핸들러, 프롬프트 초안 생성을 돕고, 승인 후 PR 생성 흐름으로 이어지도록 구성했습니다.</p>
+    </section>
+    <section>
+      <h2>스크린샷 갤러리</h2>
+      <figure><img src="assets/01-command-cards.png" alt="Slack 봇 커맨드 관리 화면" loading="lazy" /><figcaption>Slack 봇 명령어를 카드 형태로 관리하고, 팀원들이 필요한 기능을 AI 채팅 인터페이스를 통해 쉽게 등록할 수 있도록 만든 화면입니다.</figcaption></figure>
+    </section>
+  </main>
+</body>
+</html>

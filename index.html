@@ -189,7 +189,7 @@
       background: var(--chip);
       padding: 3px 10px;
       color: var(--text);
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 800;
       white-space: nowrap;
     }
@@ -381,6 +381,34 @@
       min-height: 24px;
       padding: 2px 8px;
       font-size: 12px;
+    }
+
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      flex: 0 0 auto;
+      color: #c2410c;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 3px;
+      white-space: nowrap;
+    }
+
+    .achievement strong.achievement-title-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 12px;
+    }
+
+    .achievement-title-row > span {
+      flex: 0 1 auto;
+      min-width: 0;
     }
 
     .project-section {
@@ -631,12 +659,12 @@
                 <span class="role-meta">AI 리소스 표준화 · Figma/백엔드 MCP · Slack/Jira/Confluence/GitHub 워크플로우</span>
               </summary>
               <div class="achievement-list">
-                <div class="achievement"><span class="dot">•</span><div><strong>사내 AI 공용 리소스 저장소 구축</strong><p>여러 팀이 AI 코딩 에이전트를 활용해 유사한 도구를 각자 만들면서 리소스가 중복되고 품질 기준이 분산되는 문제를 줄이기 위해, skills, agents, commands, hooks를 공용 자산으로 관리·배포하는 저장소를 구축했습니다.</p></div></div>
+                <div class="achievement"><span class="dot">•</span><div><strong class="achievement-title-row"><span>사내 AI 공용 리소스 저장소 구축</span><a class="case-link" href="projects/internal-ai-resource-repository/index.html">[프로젝트 상세 보기]</a></strong><p>여러 팀이 AI 코딩 에이전트를 활용해 유사한 도구를 각자 만들면서 리소스가 중복되고 품질 기준이 분산되는 문제를 줄이기 위해, skills, agents, commands, hooks를 공용 자산으로 관리·배포하는 저장소를 구축했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>Figma 기반 디자인 자동화 인프라 구축 시도</strong><p>기획 콘텐츠에서 Figma 디자인, 프론트엔드 구현, 디자인 검수까지 이어지는 워크플로우를 AI로 단순화하고 가속화하기 위해, Figma 플러그인–MCP 구조와 컴포넌트·토큰·스타일 매핑 기반의 Figma-to-code 워크플로우를 시도했습니다.</p><p>다만 Figma 중심 접근만으로는 실제 실행 환경과 디자인 의도 사이의 차이를 즉시 확인하기 어렵다는 한계가 있었고, 결과적으로 주된 해결책으로 이어지지는 못했습니다.</p></div></div>
-                <div class="achievement"><span class="dot">•</span><div><strong>pd-design 데스크톱 디자인 협업 도구 개발</strong><div class="stack-list"><span class="chip chip-tech">Tauri v2</span><span class="chip chip-tech">Rust</span><span class="chip chip-tech">React 19</span><span class="chip chip-tech">TypeScript</span><span class="chip chip-tech">Tailwind CSS</span><span class="chip chip-tech">Zustand</span></div><p>기존 Figma 중심 워크플로우에서는 디자이너가 컴포넌트와 디자인 토큰, 화면을 작성하면 개발자가 이를 다시 코드로 구현하고, 이후 디자이너가 실제 구현 결과를 다시 검수하는 과정이 반복됐습니다. 또한 개발 요구사항에 따라 props나 화면 표현이 달라지면서 Figma에 남아 있는 설계와 실제 코드가 점점 불일치하는 상황도 생겼습니다.</p><p>어차피 최종 산출물은 코드라는 점에 주목해, 코드베이스를 디자인 협업의 기준점(Single Source of Truth)으로 삼는 방향을 시도했습니다. 디자이너가 코드베이스 안에서 컴포넌트를 확인하고 디자인 변경을 요청하면, 개발자는 그 결과를 이어받아 기능과 비즈니스 로직을 붙이는 방식으로 전달·검수 과정을 줄일 수 있다고 보았습니다.</p><p>Tauri v2 기반으로 로컬 코드 프로젝트를 자동 인식하고 dev server를 실행해 실시간 미리보기를 제공하며, Claude Code CLI와 연결해 자연어로 디자인 변경을 요청하고 변경 내용을 git/PR 흐름으로 전달할 수 있는 구조를 구현했습니다. CSS/SCSS/JSON/Tailwind/TypeScript 기반 디자인 토큰 추출, Storybook 컴포넌트 탐색, 반응형 뷰포트 전환을 지원해 코드베이스 중심의 디자인 협업을 실험했습니다.</p></div></div>
+                <div class="achievement"><span class="dot">•</span><div><strong class="achievement-title-row"><span>pd-design 데스크톱 디자인 협업 도구 개발</span><a class="case-link" href="projects/pd-design/index.html">[프로젝트 상세 보기]</a></strong><div class="stack-list"><span class="chip chip-tech">Tauri v2</span><span class="chip chip-tech">Rust</span><span class="chip chip-tech">React 19</span><span class="chip chip-tech">TypeScript</span><span class="chip chip-tech">Tailwind CSS</span><span class="chip chip-tech">Zustand</span></div><p>기존 Figma 중심 워크플로우에서는 디자이너가 컴포넌트와 디자인 토큰, 화면을 작성하면 개발자가 이를 다시 코드로 구현하고, 이후 디자이너가 실제 구현 결과를 다시 검수하는 과정이 반복됐습니다. 또한 개발 요구사항에 따라 props나 화면 표현이 달라지면서 Figma에 남아 있는 설계와 실제 코드가 점점 불일치하는 상황도 생겼습니다.</p><p>어차피 최종 산출물은 코드라는 점에 주목해, 코드베이스를 디자인 협업의 기준점(Single Source of Truth)으로 삼는 방향을 시도했습니다. 디자이너가 코드베이스 안에서 컴포넌트를 확인하고 디자인 변경을 요청하면, 개발자는 그 결과를 이어받아 기능과 비즈니스 로직을 붙이는 방식으로 전달·검수 과정을 줄일 수 있다고 보았습니다.</p><p>Tauri v2 기반으로 로컬 코드 프로젝트를 자동 인식하고 dev server를 실행해 실시간 미리보기를 제공하며, Claude Code CLI와 연결해 자연어로 디자인 변경을 요청하고 변경 내용을 git/PR 흐름으로 전달할 수 있는 구조를 구현했습니다. CSS/SCSS/JSON/Tailwind/TypeScript 기반 디자인 토큰 추출, Storybook 컴포넌트 탐색, 반응형 뷰포트 전환을 지원해 코드베이스 중심의 디자인 협업을 실험했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>백엔드 코드베이스 탐색용 MCP 서버 구축</strong><p>기획·QA 등 비개발 직군이 문의 대응이나 다음 기획을 위해 API 동작, 데이터 필드, 에러코드, 관련 코드 위치를 개발자에게 반복적으로 물어봐야 하는 상황을 줄이고자, AI 클라이언트와 연결되는 백엔드 코드베이스 탐색용 MCP(Model Context Protocol) 서버를 구축했습니다. 자연어 질문을 코드 검색·분석 도구 호출로 연결해, 비개발자도 AI를 통해 백엔드 구조와 구현 맥락을 직접 탐색할 수 있는 기반을 마련했습니다.</p></div></div>
-                <div class="achievement print-page-break"><span class="dot">•</span><div><strong>AI 워크플로우 플랫폼 구축</strong><div class="stack-list"><span class="chip chip-tech">Fastify</span><span class="chip chip-tech">TypeScript</span><span class="chip chip-tech">React 19</span><span class="chip chip-tech">SQLite</span><span class="chip chip-tech">Drizzle ORM</span><span class="chip chip-tech">WebSocket</span><span class="chip chip-tech">Zustand</span></div><p>직군과 숙련도에 따라 PRD, 티켓, UI 초안, API/TC 문서, 코드 리뷰 결과물의 품질 편차가 커지고 특정 역할에 업무가 집중되는 문제를 줄이기 위해, Jira·Confluence·Slack·GitHub를 연결하는 AI 실행 플랫폼을 설계·구축했습니다.</p><p>Fastify 백엔드에서 Jira 상태 변경, Slack 커맨드, GitHub 웹훅을 받아 워크플로우로 라우팅하고, chat-server와 Claude Agent SDK를 통해 대화형 분석·생성 세션을 실행하도록 구성했습니다. PRD, API, UI, TC, 코드, 티켓, Slack 봇 등 여러 워크플로우를 프롬프트 정의 기반으로 관리해 요구사항 구체화부터 산출물 생성·검토·업로드까지 한 흐름으로 이어지게 했습니다.</p></div></div>
-                <div class="achievement"><span class="dot">•</span><div><strong>Slack 봇 기능·워크플로우 실험 구조 설계</strong><p>개발 직군이 아니더라도 필요한 Slack 봇 기능을 쉽게 제안·생성·검증할 수 있게 하려면, 이벤트 처리, 프롬프트, 핸들러, 권한 설정 같은 반복 구현 부담을 낮춰야 한다고 보았습니다. 이를 위해 Socket Mode 기반 Slack 봇을 워크플로우 엔진과 연결했습니다.</p><p><code>commands.json</code>에 커맨드 별칭, 트리거 타입, 모델, 프롬프트 파일을 정의하고, 멘션·슬래시 커맨드·메시지 단축키·모달 제출을 공통 라우터에서 처리하도록 구성했습니다. 스레드 메시지와 사용자 정보를 모아 컨텍스트를 만들고, 요약·티켓 생성·코드베이스 질의·스프린트 현황·회고 시작 등 14개 커맨드를 실행할 수 있게 했습니다.</p><p>신규 기능 아이디어는 Slack에서 <code>신규기능</code> 명령으로 <code>slack-bot-dev</code> 채팅 세션을 열고, Claude가 커맨드 정의·핸들러·프롬프트 초안을 생성한 뒤 PR 흐름으로 전달하도록 만들어 비개발자도 초기 아이디어를 실제 기능 초안까지 연결할 수 있게 했습니다.</p></div></div>
+                <div class="achievement print-page-break"><span class="dot">•</span><div><strong class="achievement-title-row"><span>AI 워크플로우 플랫폼 구축</span><a class="case-link" href="projects/ai-workflow-platform/index.html">[프로젝트 상세 보기]</a></strong><div class="stack-list"><span class="chip chip-tech">Fastify</span><span class="chip chip-tech">TypeScript</span><span class="chip chip-tech">React 19</span><span class="chip chip-tech">SQLite</span><span class="chip chip-tech">Drizzle ORM</span><span class="chip chip-tech">WebSocket</span><span class="chip chip-tech">Zustand</span></div><p>직군과 숙련도에 따라 PRD, 티켓, UI 초안, API/TC 문서, 코드 리뷰 결과물의 품질 편차가 커지고 특정 역할에 업무가 집중되는 문제를 줄이기 위해, Jira·Confluence·Slack·GitHub를 연결하는 AI 실행 플랫폼을 설계·구축했습니다.</p><p>Fastify 백엔드에서 Jira 상태 변경, Slack 커맨드, GitHub 웹훅을 받아 워크플로우로 라우팅하고, chat-server와 Claude Agent SDK를 통해 대화형 분석·생성 세션을 실행하도록 구성했습니다. PRD, API, UI, TC, 코드, 티켓, Slack 봇 등 여러 워크플로우를 프롬프트 정의 기반으로 관리해 요구사항 구체화부터 산출물 생성·검토·업로드까지 한 흐름으로 이어지게 했습니다.</p></div></div>
+                <div class="achievement"><span class="dot">•</span><div><strong class="achievement-title-row"><span>Slack 봇 기능·워크플로우 실험 구조 설계</span><a class="case-link" href="projects/slack-bot-workflow/index.html">[프로젝트 상세 보기]</a></strong><p>개발 직군이 아니더라도 필요한 Slack 봇 기능을 쉽게 제안·생성·검증할 수 있게 하려면, 이벤트 처리, 프롬프트, 핸들러, 권한 설정 같은 반복 구현 부담을 낮춰야 한다고 보았습니다. 이를 위해 Socket Mode 기반 Slack 봇을 워크플로우 엔진과 연결했습니다.</p><p><code>commands.json</code>에 커맨드 별칭, 트리거 타입, 모델, 프롬프트 파일을 정의하고, 멘션·슬래시 커맨드·메시지 단축키·모달 제출을 공통 라우터에서 처리하도록 구성했습니다. 스레드 메시지와 사용자 정보를 모아 컨텍스트를 만들고, 요약·티켓 생성·코드베이스 질의·스프린트 현황·회고 시작 등 14개 커맨드를 실행할 수 있게 했습니다.</p><p>신규 기능 아이디어는 Slack에서 <code>신규기능</code> 명령으로 <code>slack-bot-dev</code> 채팅 세션을 열고, Claude가 커맨드 정의·핸들러·프롬프트 초안을 생성한 뒤 PR 흐름으로 전달하도록 만들어 비개발자도 초기 아이디어를 실제 기능 초안까지 연결할 수 있게 했습니다.</p></div></div>
               </div>
             </details>
 
@@ -716,10 +744,10 @@
             <details class="role-block" open>
               <summary><span class="role-title">서비스 개발</span><span class="role-meta">오늘우리가게 · 춘천 공공배달앱 · 더페이 · Kio-Brick</span></summary>
               <div class="achievement-list">
-                <div class="achievement"><span class="dot">•</span><div><strong>오늘우리가게</strong><div class="stack-list"><span class="chip chip-tech">React Native</span><span class="chip chip-tech">Firebase</span></div><p>점주가 여러 배달앱의 리뷰, 매출, 경쟁 매장 데이터를 각각 확인해야 하는 불편을 운영 데이터 확인 문제로 정의했습니다. 데이터를 한 화면에서 조회하고 시각화할 수 있도록 구현해 운영에 필요한 핵심 정보를 빠르게 확인할 수 있게 했습니다.</p></div></div>
+                <div class="achievement"><span class="dot">•</span><div><strong class="achievement-title-row"><span>오늘우리가게</span><a class="case-link" href="https://h-brick.com/view/solution_mystore.html" target="_blank" rel="noopener noreferrer">[프로젝트 상세 보기]</a></strong><div class="stack-list"><span class="chip chip-tech">React Native</span><span class="chip chip-tech">Firebase</span></div><p>점주가 여러 배달앱의 리뷰, 매출, 경쟁 매장 데이터를 각각 확인해야 하는 불편을 운영 데이터 확인 문제로 정의했습니다. 데이터를 한 화면에서 조회하고 시각화할 수 있도록 구현해 운영에 필요한 핵심 정보를 빠르게 확인할 수 있게 했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>춘천 공공배달앱</strong><div class="stack-list"><span class="chip chip-tech">React</span><span class="chip chip-tech">React Native</span><span class="chip chip-tech">iOS</span><span class="chip chip-tech">Android</span></div><p>사용자 앱, 점주용 앱, 관리자 웹, Windows POS Agent까지 포함한 멀티 채널 서비스를 설계하고 구현했습니다. 여러 채널을 동시에 개발해야 하는 상황에서 프론트엔드 전체 아키텍처를 정의하고 유지보수 체계를 수립했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>더페이 제로페이상품권 구매앱</strong><div class="stack-list"><span class="chip chip-tech">React Native</span><span class="chip chip-tech">React Native Navigation (RNN)</span><span class="chip chip-tech">Tailwind CSS</span><span class="chip chip-tech">Zeplin</span></div><p>제로페이상품권 구매 흐름의 프론트엔드를 개발했습니다. 네이티브 환경용으로 제공된 SecureKeypad를 React Native 화면에서 사용할 수 있도록 브릿지 모듈을 구현해, 결제·인증 입력 흐름을 앱 안에서 연결했습니다.</p></div></div>
-                <div class="achievement"><span class="dot">•</span><div><strong>모바일 키오스크 Kio-Brick</strong><div class="stack-list"><span class="chip chip-tech">React</span><span class="chip chip-tech">React Native</span><span class="chip chip-tech">Apollo Subscriptions</span><span class="chip chip-tech">GraphQL</span></div><p>점주용 앱, 사용자 웹, 백엔드 대부분까지 서비스 전반을 담당했습니다. 여러 사용자가 한 주문의 결제 금액을 나누어 결제할 수 있는 1/N 결제 기능을 구현했습니다. Apollo Subscriptions를 사용해 참여자별 결제 상태와 전체 결제 진행 상황이 실시간으로 갱신되도록 했습니다.</p></div></div>
+                <div class="achievement"><span class="dot">•</span><div><strong class="achievement-title-row"><span>모바일 키오스크 Kio-Brick</span><a class="case-link" href="https://h-brick.com/view/solution_kiobrick.html" target="_blank" rel="noopener noreferrer">[프로젝트 상세 보기]</a></strong><div class="stack-list"><span class="chip chip-tech">React</span><span class="chip chip-tech">React Native</span><span class="chip chip-tech">Apollo Subscriptions</span><span class="chip chip-tech">GraphQL</span></div><p>점주용 앱, 사용자 웹, 백엔드 대부분까지 서비스 전반을 담당했습니다. 여러 사용자가 한 주문의 결제 금액을 나누어 결제할 수 있는 1/N 결제 기능을 구현했습니다. Apollo Subscriptions를 사용해 참여자별 결제 상태와 전체 결제 진행 상황이 실시간으로 갱신되도록 했습니다.</p></div></div>
               </div>
             </details>
             <details class="role-block" open>
@@ -832,5 +860,46 @@
       </table>
     </section>
   </main>
+  <script>
+    const resumeScrollKey = "kim-resume-scroll-y";
+
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    const restoreResumeScroll = () => {
+      const savedY = sessionStorage.getItem(resumeScrollKey);
+      if (!savedY) {
+        return;
+      }
+
+      sessionStorage.removeItem(resumeScrollKey);
+      const targetY = Number(savedY);
+      if (!Number.isFinite(targetY)) {
+        return;
+      }
+
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, targetY);
+
+      requestAnimationFrame(() => {
+        root.style.scrollBehavior = previousScrollBehavior;
+      });
+    };
+
+    document.querySelectorAll('a.case-link[href^="projects/"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+          return;
+        }
+
+        sessionStorage.setItem(resumeScrollKey, String(window.scrollY));
+      });
+    });
+
+    window.addEventListener("pageshow", restoreResumeScroll);
+  </script>
 </body>
 </html>
