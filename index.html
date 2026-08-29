@@ -584,6 +584,16 @@
         page-break-before: always;
       }
 
+      .career-body {
+        --career-body-padding-left: 27px;
+        border-left: 0;
+        background: linear-gradient(var(--line), var(--line)) 6px 0 / 2px 100% no-repeat;
+      }
+
+      .career-company::before {
+        left: calc(7px - var(--career-body-padding-left));
+      }
+
       .print-page-break {
         break-before: page;
         page-break-before: always;
@@ -662,7 +672,6 @@
                 <div class="achievement"><span class="dot">•</span><div><strong class="achievement-title-row"><span>사내 AI 공용 리소스 저장소 구축</span><a class="case-link" href="https://the9-kim.github.io/resume/projects/internal-ai-resource-repository/index.html">[프로젝트 상세 보기]</a></strong><p>여러 팀이 AI 코딩 에이전트를 활용해 유사한 도구를 각자 만들면서 리소스가 중복되고 품질 기준이 분산되는 문제를 줄이기 위해, skills, agents, commands, hooks를 공용 자산으로 관리·배포하는 저장소를 구축했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>Figma 기반 디자인 자동화 인프라 구축 시도</strong><p>기획 콘텐츠에서 Figma 디자인, 프론트엔드 구현, 디자인 검수까지 이어지는 워크플로우를 AI로 단순화하고 가속화하기 위해, Figma 플러그인–MCP 구조와 컴포넌트·토큰·스타일 매핑 기반의 Figma-to-code 워크플로우를 시도했습니다.</p><p>다만 Figma 중심 접근만으로는 실제 실행 환경과 디자인 의도 사이의 차이를 즉시 확인하기 어렵다는 한계가 있었고, 결과적으로 주된 해결책으로 이어지지는 못했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong class="achievement-title-row"><span>pd-design 데스크톱 디자인 협업 도구 개발</span><a class="case-link" href="https://the9-kim.github.io/resume/projects/pd-design/index.html">[프로젝트 상세 보기]</a></strong><div class="stack-list"><span class="chip chip-tech">Tauri v2</span><span class="chip chip-tech">Rust</span><span class="chip chip-tech">React 19</span><span class="chip chip-tech">TypeScript</span><span class="chip chip-tech">Tailwind CSS</span><span class="chip chip-tech">Zustand</span></div><p>기존 Figma 중심 워크플로우에서는 디자이너가 컴포넌트와 디자인 토큰, 화면을 작성하면 개발자가 이를 다시 코드로 구현하고, 이후 디자이너가 실제 구현 결과를 다시 검수하는 과정이 반복됐습니다. 또한 개발 요구사항에 따라 props나 화면 표현이 달라지면서 Figma에 남아 있는 설계와 실제 코드가 점점 불일치하는 상황도 생겼습니다.</p><p>어차피 최종 산출물은 코드라는 점에 주목해, 코드베이스를 디자인 협업의 기준점(Single Source of Truth)으로 삼는 방향을 시도했습니다. 디자이너가 코드베이스 안에서 컴포넌트를 확인하고 디자인 변경을 요청하면, 개발자는 그 결과를 이어받아 기능과 비즈니스 로직을 붙이는 방식으로 전달·검수 과정을 줄일 수 있다고 보았습니다.</p><p>Tauri v2 기반으로 로컬 코드 프로젝트를 자동 인식하고 dev server를 실행해 실시간 미리보기를 제공하며, Claude Code CLI와 연결해 자연어로 디자인 변경을 요청하고 변경 내용을 git/PR 흐름으로 전달할 수 있는 구조를 구현했습니다. CSS/SCSS/JSON/Tailwind/TypeScript 기반 디자인 토큰 추출, Storybook 컴포넌트 탐색, 반응형 뷰포트 전환을 지원해 코드베이스 중심의 디자인 협업을 실험했습니다.</p></div></div>
-                <div class="achievement"><span class="dot">•</span><div><strong>백엔드 코드베이스 탐색용 MCP 서버 구축</strong><p>기획·QA 등 비개발 직군이 문의 대응이나 다음 기획을 위해 API 동작, 데이터 필드, 에러코드, 관련 코드 위치를 개발자에게 반복적으로 물어봐야 하는 상황을 줄이고자, AI 클라이언트와 연결되는 백엔드 코드베이스 탐색용 MCP(Model Context Protocol) 서버를 구축했습니다. 자연어 질문을 코드 검색·분석 도구 호출로 연결해, 비개발자도 AI를 통해 백엔드 구조와 구현 맥락을 직접 탐색할 수 있는 기반을 마련했습니다.</p></div></div>
                 <div class="achievement print-page-break"><span class="dot">•</span><div><strong class="achievement-title-row"><span>AI 워크플로우 플랫폼 구축</span><a class="case-link" href="https://the9-kim.github.io/resume/projects/ai-workflow-platform/index.html">[프로젝트 상세 보기]</a></strong><div class="stack-list"><span class="chip chip-tech">Fastify</span><span class="chip chip-tech">TypeScript</span><span class="chip chip-tech">React 19</span><span class="chip chip-tech">SQLite</span><span class="chip chip-tech">Drizzle ORM</span><span class="chip chip-tech">WebSocket</span><span class="chip chip-tech">Zustand</span></div><p>직군과 숙련도에 따라 PRD, 티켓, UI 초안, API/TC 문서, 코드 리뷰 결과물의 품질 편차가 커지고 특정 역할에 업무가 집중되는 문제를 줄이기 위해, Jira·Confluence·Slack·GitHub를 연결하는 AI 실행 플랫폼을 설계·구축했습니다.</p><p>Fastify 백엔드에서 Jira 상태 변경, Slack 커맨드, GitHub 웹훅을 받아 워크플로우로 라우팅하고, chat-server와 Claude Agent SDK를 통해 대화형 분석·생성 세션을 실행하도록 구성했습니다. PRD, API, UI, TC, 코드, 티켓, Slack 봇 등 여러 워크플로우를 프롬프트 정의 기반으로 관리해 요구사항 구체화부터 산출물 생성·검토·업로드까지 한 흐름으로 이어지게 했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong class="achievement-title-row"><span>Slack 봇 기능·워크플로우 실험 구조 설계</span><a class="case-link" href="https://the9-kim.github.io/resume/projects/slack-bot-workflow/index.html">[프로젝트 상세 보기]</a></strong><p>개발 직군이 아니더라도 필요한 Slack 봇 기능을 쉽게 제안·생성·검증할 수 있게 하려면, 이벤트 처리, 프롬프트, 핸들러, 권한 설정 같은 반복 구현 부담을 낮춰야 한다고 보았습니다. 이를 위해 Socket Mode 기반 Slack 봇을 워크플로우 엔진과 연결했습니다.</p><p><code>commands.json</code>에 커맨드 별칭, 트리거 타입, 모델, 프롬프트 파일을 정의하고, 멘션·슬래시 커맨드·메시지 단축키·모달 제출을 공통 라우터에서 처리하도록 구성했습니다. 스레드 메시지와 사용자 정보를 모아 컨텍스트를 만들고, 요약·티켓 생성·코드베이스 질의·스프린트 현황·회고 시작 등 14개 커맨드를 실행할 수 있게 했습니다.</p><p>신규 기능 아이디어는 Slack에서 <code>신규기능</code> 명령으로 <code>slack-bot-dev</code> 채팅 세션을 열고, Claude가 커맨드 정의·핸들러·프롬프트 초안을 생성한 뒤 PR 흐름으로 전달하도록 만들어 비개발자도 초기 아이디어를 실제 기능 초안까지 연결할 수 있게 했습니다.</p></div></div>
               </div>
@@ -670,13 +679,11 @@
 
             <details class="role-block" open>
               <summary>
-                <span class="role-title">인증 체계 고도화 / 사내 서비스 통합 작업 (진행 중)</span>
-                <span class="role-meta">NestJS v11 · oidc-provider · Node/Spring Boot/React/React Native 연동 지원 준비</span>
+                <span class="role-title">통합 인증 및 SNS 로그인 설계</span>
+                <span class="role-meta">사내 공통 인증 플랫폼 · 모바일 인증 흐름</span>
               </summary>
-              <div class="stack-list"><span class="chip chip-tech">NestJS v11</span><span class="chip chip-tech">oidc-provider</span><span class="chip chip-tech">Node</span><span class="chip chip-tech">Spring Boot</span><span class="chip chip-tech">React</span><span class="chip chip-tech">React Native</span></div>
               <div class="achievement-list">
-                <div class="achievement"><span class="dot">•</span><div><strong>전사 서비스 통합 인증(SSO) 시스템 구축 진행</strong><p>사내 서비스마다 인증 방식과 연동 방식이 달라 사용자는 서비스별로 다른 로그인 경험을 겪고, 운영자는 계정 관리 기준이 분산되는 상황을 전사 서비스 통합 인증 문제로 정의했습니다.</p><p>NestJS v11과 <code>oidc-provider</code> 기반의 통합 인증 서버를 구축 중이며, 표준 기반 인증 구조를 설계해 전사 서비스가 하나의 인증 체계로 연결될 수 있는 기반을 마련하고 있습니다.</p></div></div>
-                <div class="achievement"><span class="dot">•</span><div><strong>연동 가이드 및 예제 준비</strong><p>통합 인증 도입 이후 각 팀의 기술 스택이 달라 구현 단계에서 반복 시행착오가 발생할 수 있다고 보고, Node, Spring Boot, React, React Native 기준의 예제와 연동 가이드를 정리하고 있습니다.</p><p>각 팀이 실제 구현 단계에서 바로 참고할 수 있는 기준점을 마련해 인증 연동의 진입 장벽을 낮추고, 이후 다른 팀으로 확산·운영하기 쉬운 구조를 만드는 것을 목표로 하고 있습니다.</p></div></div>
+                <div class="achievement"><span class="dot">•</span><div><strong>통합 인증 및 SNS 로그인 설계</strong><p>사내 여러 서비스가 공통으로 사용할 인증 플랫폼을 처음부터 설계하고 구축했습니다. 기술 선택부터 전체 인증 흐름을 설계했으며, 카카오·애플 SNS 로그인과 로그인 후 앱 복귀, 세션 유지, 로그아웃·회원 탈퇴까지 초반 설계와 구현을 주도했습니다.</p></div></div>
               </div>
             </details>
 
@@ -688,6 +695,7 @@
               <div class="stack-list"><span class="chip chip-tech">React Native</span><span class="chip chip-tech">TypeScript</span><span class="chip chip-tech">KCP</span><span class="chip chip-tech">Naver Map</span><span class="chip chip-tech">i18n</span></div>
               <div class="achievement-list">
                 <div class="achievement"><span class="dot">•</span><div><strong>출입 경험 고도화</strong><p>모바일 출입카드 발급, 출입 권한 안내, SDK 초기화 타이밍, BLE 스캔 간격, 오류 로그 개선 등 출입 흐름 전반을 지속적으로 개선했습니다. 기존 모바일 출입카드 중심의 출입 경험을 확장하기 위해 토스 FacePass 도입을 결정하고, iOS/Android SDK를 React Native에서 사용할 수 있도록 Native Module 패키지로 작성했습니다. FacePass가 운영 초기 단계의 서비스였고 React Native 환경에서 정상 동작하지 않는 이슈가 있어, 토스 측과의 기술 커뮤니케이션을 도맡아 진행하며 얼굴 인식 기반 출입 흐름을 구현했습니다.</p></div></div>
+                <div class="achievement"><span class="dot">•</span><div><strong>모바일 출입 서비스 재구축 및 운영 안정화</strong><p>얼굴 인식 출입 서비스의 현장 운영이 확대되면서 기존 앱 구조와 기기 인증 방식으로는 안정적인 확장이 어렵다고 판단했습니다. 태블릿 입장 앱과 연동 구조를 재정비하고, 기기별 안전한 인증, 환경별 배포, 현장 페어링·오류 안내 흐름을 함께 개선했습니다. 그 결과 신규 기기 설치와 운영 대응이 쉬워지고, 출입 과정의 보안성과 현장 안정성을 높였습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>공간 예약 및 지도 기반 탐색 기능 고도화</strong><p>예약 탭, 공간 리스트·상세, 예약 내역, 필터, 시간 막대, 지도/목록 전환, 지점·공간 마커와 바텀시트 등 공간 예약 흐름을 개선했습니다. 네이버 지도 SDK를 연동해 사용자가 지점과 공간 위치를 지도에서 확인하고, 예약 가능한 공간을 더 직관적으로 탐색할 수 있도록 했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>개인 결제·크레딧 결제 흐름 구현</strong><p>KCP 결제 모듈을 앱에 연동하고, 결제용 웹뷰, 외부 결제 앱 스킴, 결제 승인 요청, 결제 결과 화면, 영수증 보기, 결제 취소·환불 예정 금액 표시 등 개인 결제와 크레딧 결제 흐름을 구현했습니다. 회의실 예약과 결제 기능을 앱 안에서 이어지게 해 공간 이용의 편의성과 운영 투명성을 높였습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>고객센터 및 1:1 문의 기능 내재화</strong><p>외부 고객센터 의존을 줄이기 위해 자주 묻는 질문, 문의 내역, 문의 상세, 1:1 문의 등록, 추가 문의, 파일 첨부, 딥링크, 알림센터·푸시 연동 등 고객센터 기능을 앱 내부 흐름으로 구현했습니다. 문의 등록과 조회, 첨부파일 처리, 상태별 안내를 앱 안에서 처리할 수 있게 해 사용자 지원 흐름을 개선했습니다.</p></div></div>
@@ -707,6 +715,7 @@
                 <div class="achievement"><span class="dot">•</span><div><strong>저사양 기기 성능 최적화</strong><p>저사양 기기에서 공간 예약 화면 로딩이 30초 이상 걸려 실제 사용 흐름이 끊기는 문제를 확인했습니다. 이를 단순 기기 성능 문제가 아니라 데이터 로딩과 렌더링 흐름이 사용자의 예약 맥락을 끊는 문제로 보고, 병목 구간을 나누어 개선해 로딩 시간을 1초 이하로 단축했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>레거시 환경 개선 및 기술부채 해소</strong><p>Redux &amp; Redux-Saga를 Zustand로 전환해 코드 단순화, 모듈화, 성능 개선을 이끌었습니다. TypeScript 도입과 레거시 리팩토링을 통해 타입 안정성을 확보했고, TanStack Query(React Query) 적용으로 서버 상태 관리와 데이터 페칭 구조를 단순화했습니다. Tailwind CSS 도입으로 디자인 시스템 대응력과 협업 효율을 높였습니다.</p><p>React Native를 0.63.3에서 0.79까지 지속적으로 업그레이드하고 주요 라이브러리 업데이트, Old Architecture → New Architecture 전환, CodePush 종료 대응 EAS Update 마이그레이션을 수행했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>사용자 행동 분석 기반 구축</strong><p>GA4 이벤트 체계가 없는 상황에서 전역 버튼 클릭 이벤트 자동 수집 구조를 만들고, 버튼 텍스트·페이지 정보 등 핵심 파라미터를 함께 수집하도록 구성했습니다. Microsoft Clarity를 도입해 세션 리플레이 및 히트맵 기반의 정성적 사용자 행동 분석 환경을 구축했습니다.</p></div></div>
+                <div class="achievement"><span class="dot">•</span><div><strong>모바일 E2E 회귀 검증 자동화</strong><p>주요 사용자 흐름을 자동 검증하고 실행 영상과 결과 리포트를 남기는 환경을 구축했습니다. 배포 변경 범위에 맞춰 필요한 검증을 실행하도록 연결해 반복적인 수동 확인을 줄이고, 앱 변경으로 인한 사용자 경험 회귀를 더 빠르게 발견할 수 있게 했습니다.</p></div></div>
                 <div class="achievement"><span class="dot">•</span><div><strong>CI/CD 자동화 및 운영 환경 개선</strong><p>GitHub Actions + Fastlane 기반으로 iOS/Android 배포 자동화를 구성했습니다. TestFlight, Firebase, CodePush, EAS Update를 활용해 배포 프로세스를 고도화했습니다.</p><p>Datadog 기반 모니터링 강화, n8n을 활용한 Slack/OpenAI 기반 요약·티켓 생성·UI 개선 제안 자동화, GitHub Workflow 기반 월별 개발자 연구노트 자동 작성까지 운영 생산성 개선을 병행했습니다.</p></div></div>
               </div>
             </details>
